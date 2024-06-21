@@ -13,6 +13,7 @@ check_deps:
 	@echo "Checking dependencies..."
 	@dpkg -l | grep libgtk-3-dev || { echo "libgtk-3-dev is not installed. Installing..."; sudo apt-get install libgtk-3-dev; }
 	@dpkg -l | grep  libsoup2.4-dev || { echo "libsoup2.4-dev is not installed. Installing..."; sudo apt-get install libsoup2.4-dev; }
+	@dpkg -l | grep libjavascriptcoregtk-4.0-dev || { echo "libjavascriptcoregtk-4.0-dev is not installed. Installing..."; sudo apt-get install libjavascriptcoregtk-4.0-dev; }
 
 # Tauriアプリのビルドコマンド
 build:

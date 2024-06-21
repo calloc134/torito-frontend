@@ -24,6 +24,8 @@ jobs:
           node-version: "20"
           cache: "pnpm"
 
+      - run: make check_deps
+
       - run: make build
 
         # とりあえずここまで

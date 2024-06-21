@@ -11,6 +11,8 @@ use tauri::api::process::Command as TCommand;
 use tauri::WindowEvent;
 
 fn start_backend(receiver: Receiver<i32>) {
+    // pathを表示
+    println!("Current directory: {:?}", std::env::current_dir().unwrap());
     // `new_sidecar()` expects just the filename, NOT the whole path
     let t = TCommand::new_sidecar("torito-prototype")
         .expect("[Error] Failed to create new sidecar command.");

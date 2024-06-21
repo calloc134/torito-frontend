@@ -28,4 +28,9 @@ jobs:
 
       - run: make build
 
-        # とりあえずここまで
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tauri-app
+          # とりあえず確認するために
+          path: /home/runner/work/tauri-test/tauri-test/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage

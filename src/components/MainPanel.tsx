@@ -69,9 +69,7 @@ export const MainPanel = () => {
           onClick={async () => {
             setPercent(0);
             setLogTextArea("");
-            toast("Connecting to Tor network...", {
-              icon: "🛠️",
-            });
+            toast("Connecting to Tor network...");
             const result = await mutationData(
               ({ message, percent }: Parameters<MutationDataCallback>[0]) => {
                 setLogTextArea((prev) => prev + `${message}: ${percent}%\n`);

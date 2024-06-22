@@ -7,12 +7,22 @@ use command_group::CommandGroup;
 use std::process::Command;
 use std::sync::mpsc::{sync_channel, Receiver};
 use std::thread;
+use tauri::api::path::config_dir;
 use tauri::api::process::Command as TCommand;
 use tauri::WindowEvent;
 
 fn start_backend(receiver: Receiver<i32>) {
     // pathを表示
-    println!("Current directory: {:?}", std::env::current_dir().unwrap());
+    println!("config_dir: {:?}", config_dir().unwrap());
+    // 実行ファイルのパスを表示
+
+    let config_path = config_dir().unwrap();
+    // config.tomlをカレントディレクトリへコピー
+    std::fs::copy(
+        format!("{}/torito.toml", config_path.display()),
+        "config.toml",
+    )
+    .expect("Failed to copy config.toml");
     // `new_sidecar()` expects just the filename, NOT the whole path
     let t = TCommand::new_sidecar("torito-prototype")
         .expect("[Error] Failed to create new sidecar command.");

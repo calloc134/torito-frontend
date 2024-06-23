@@ -4,6 +4,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use command_group::CommandGroup;
+use serde::Deserialize;
 use std::process::Command;
 use std::sync::mpsc::{sync_channel, Receiver};
 use std::thread;
@@ -11,21 +12,36 @@ use tauri::api::path::config_dir;
 use tauri::api::process::Command as TCommand;
 use tauri::WindowEvent;
 
+#[derive(Deserialize, Debug)]
+struct Config {
+    torrcPath: String,
+    backUpDirName: String,
+    torIp: String,
+    torPort: u16,
+}
 fn start_backend(receiver: Receiver<i32>) {
-    // pathを表示
-    println!("config_dir: {:?}", config_dir().unwrap());
-    // 実行ファイルのパスを表示
-
     let config_path = config_dir().unwrap();
-    // config.tomlをカレントディレクトリへコピー
-    std::fs::copy(
-        format!("{}/torito.toml", config_path.display()),
-        "config.toml",
-    )
-    .expect("Failed to copy config.toml");
+
+    // ファイルの中身をデバッグ
+    let config_str =
+        std::fs::read_to_string(format!("{}/torito.toml", config_path.display())).unwrap();
+    let config: Config = toml::from_str(&config_str).unwrap();
+
     // `new_sidecar()` expects just the filename, NOT the whole path
     let t = TCommand::new_sidecar("torito-prototype")
-        .expect("[Error] Failed to create new sidecar command.");
+        .expect("[Error] Failed to create new sidecar command.")
+        .args(&[
+            "--torrcPath",
+            &config.torrcPath,
+            "--backUpDirName",
+            &config.backUpDirName,
+            "--torIp",
+            &config.torIp,
+            "--torPort",
+            &config.torPort.to_string(),
+        ]);
+
+    println!("t: {:?}", t);
     let mut group = Command::from(t)
         .group_spawn()
         .expect("[Error] spawning api server process.");

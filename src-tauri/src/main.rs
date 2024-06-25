@@ -21,10 +21,10 @@ struct Config {
 }
 fn start_backend(receiver: Receiver<i32>) {
     let config_path = config_dir().unwrap();
+    println!("torito config path: {}/torito.toml", config_path.display());
     // ファイルの中身をデバッグ
     let config_str =
         std::fs::read_to_string(format!("{}/torito.toml", config_path.display())).unwrap();
-    println!("config_str: {:?}", config_str);
     let config: Config = toml::from_str(&config_str).unwrap();
 
     // `new_sidecar()` expects just the filename, NOT the whole path

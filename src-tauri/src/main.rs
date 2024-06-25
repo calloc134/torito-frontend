@@ -20,6 +20,7 @@ struct Config {
     torPort: u16,
 }
 fn start_backend(receiver: Receiver<i32>) {
+    println!("current dir: {:?}", std::env::current_dir().unwrap());
     let config_path = config_dir().unwrap();
 
     // ファイルの中身をデバッグ

@@ -21,6 +21,9 @@ struct Config {
 }
 fn start_backend(receiver: Receiver<i32>) {
     println!("current dir: {:?}", std::env::current_dir().unwrap());
+    // 実行された際のコマンドについて取得
+    let args: Vec<String> = std::env::args().collect();
+    println!("args: {:?}", args);
     let config_path = config_dir().unwrap();
 
     // ファイルの中身をデバッグ

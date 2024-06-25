@@ -24,6 +24,8 @@ Inspired by [Anon Connection Wizard](https://www.whonix.org/wiki/Anon_Connection
 
 ## Installation
 
+IMPORTANT: Add `ControlPort 9051` to your torrc file.
+
 Download the latest release from the [releases page](https://github.com/calloc134/torito-frontend/releases).  
 Add `torito.toml` to `/etc/tor/` directory.
 Here is an example of `torito.toml`:

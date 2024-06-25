@@ -46,6 +46,7 @@ sudo ./tauri-test_x.x.x_amd64.AppImage
 - [Tailwind CSS](https://tailwindcss.com/)
 - [shadcn UI](https://ui.shadcn.com/)
 - [Aceternity UI](https://ui.aceternity.com/)
+- [react-hot-toast](https://react-hot-toast.com/)
 
 Backend Server is written in FastAPI and built with PyInstaller.  
 Here is the [link](https://github.com/calloc134/torito-backend).

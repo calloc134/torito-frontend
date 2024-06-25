@@ -20,12 +20,11 @@ struct Config {
     torPort: u16,
 }
 fn start_backend(receiver: Receiver<i32>) {
-    let config_path = config_dir().unwrap();
-    println!("torito config path: {}/torito.toml", config_path.display());
+    let config_path = "/etc/tor";
     // ファイルの中身をデバッグ
-    let config_str =
-        std::fs::read_to_string(format!("{}/torito.toml", config_path.display())).unwrap();
-    let config: Config = toml::from_str(&config_str).unwrap();
+    let config_str = std::fs::read_to_string(format!("{}/torito.toml", config_path))
+        .expect("Failed to read file.");
+    let config: Config = toml::from_str(&config_str).expect("Failed to parse toml.");
 
     // `new_sidecar()` expects just the filename, NOT the whole path
     let t = TCommand::new_sidecar("torito-prototype")

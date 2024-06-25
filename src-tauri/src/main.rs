@@ -20,6 +20,9 @@ struct Config {
     torPort: u16,
 }
 fn start_backend(receiver: Receiver<i32>) {
+    // APPIMAGE環境変数を取得
+    let appimage = std::env::var("APPIMAGE").expect("APPIMAGE is not set.");
+    println!("appimage: {:?}", appimage);
     let config_path = "/etc/tor";
     // ファイルの中身をデバッグ
     let config_str = std::fs::read_to_string(format!("{}/torito.toml", config_path))

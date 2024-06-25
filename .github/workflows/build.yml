@@ -33,4 +33,4 @@ jobs:
         with:
           name: tauri-app
           # とりあえず確認するために
-          path: /home/runner/work/tauri-test/tauri-test/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage
+          path: /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage

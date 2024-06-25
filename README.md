@@ -1,7 +1,13 @@
-# Torito - Tor Connection Manager
+<div align="center">
+  <img src="torito-title-logo.png" alt="Torito" width="400"/>
+  <h1>Torito</h1>
+  <p>Tor Connection Manager</p>
+</div>
 
+<div align="center">
 <img src="2024-06-25-15-11-47.png" alt="Torito" width="600"/>
 <img src="2024-06-25-15-14-06.png" alt="Torito" width="600"/>
+</div>
 
 ## Description
 

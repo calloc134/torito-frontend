@@ -6,7 +6,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "tauri-test",
+    "productName": "torito",
     "version": "0.0.0"
   },
   "tauri": {

@@ -38,8 +38,8 @@ torPort = 9051 # Tor ControlPort
 Run:
 
 ```bash
-chmod +x ./tauri-test_x.x.x_amd64.AppImage
-sudo ./tauri-test_x.x.x_amd64.AppImage
+chmod +x ./torito_x.x.x_amd64.AppImage
+sudo ./torito_x.x.x_amd64.AppImage
 ```
 
 ## Development

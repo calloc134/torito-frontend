@@ -35,7 +35,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage
+            /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/torito_0.0.0_amd64.AppImage
           tag_name: ${{ env.SHORT_SHA }}
 
       # - name: Upload artifact
@@ -43,4 +43,4 @@ jobs:
       #   with:
       #     name: tauri-app
       #     # とりあえず確認するために
-      #     path: /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage
+      #     path: /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/torito_0.0.0_amd64.AppImage

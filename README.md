@@ -1,7 +1,8 @@
-# Tauri + React + Typescript
+# Torito - Tor Connection Manager
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+## Description
 
-## Recommended IDE Setup
+Torito is a simple Tor connection manager.  
+This tool allows you to connect to the Tor network and set up tor bridges or proxies.
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Inspired by [Anon Connection Wizard](https://www.whonix.org/wiki/Anon_Connection_Wizard).

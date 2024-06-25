@@ -20,15 +20,11 @@ struct Config {
     torPort: u16,
 }
 fn start_backend(receiver: Receiver<i32>) {
-    println!("current dir: {:?}", std::env::current_dir().unwrap());
-    // 実行された際のコマンドについて取得
-    let args: Vec<String> = std::env::args().collect();
-    println!("args: {:?}", args);
     let config_path = config_dir().unwrap();
-
     // ファイルの中身をデバッグ
     let config_str =
         std::fs::read_to_string(format!("{}/torito.toml", config_path.display())).unwrap();
+    println!("config_str: {:?}", config_str);
     let config: Config = toml::from_str(&config_str).unwrap();
 
     // `new_sidecar()` expects just the filename, NOT the whole path

@@ -28,9 +28,19 @@ jobs:
 
       - run: make build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: create a short SHA
+        run: echo "SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: tauri-app
-          # とりあえず確認するために
-          path: /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage
+          files: |
+            /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage
+            tag_name: ${{ env.SHORT_SHA }}
+
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: tauri-app
+      #     # とりあえず確認するために
+      #     path: /home/runner/work/torito-frontend/torito-frontend/src-tauri/target/release/bundle/appimage/tauri-test_0.0.0_amd64.AppImage

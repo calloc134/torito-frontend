@@ -58,3 +58,8 @@ sudo ./torito_x.x.x_amd64.AppImage
 
 Backend Server is written in FastAPI and built with PyInstaller.  
 Here is the [link](https://github.com/calloc134/torito-backend).
+
+### Issues
+
+- [ ] Support for authentication of ControlPort
+- [ ] Support for unix domain socket of ControlPort

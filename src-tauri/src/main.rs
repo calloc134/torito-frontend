@@ -8,7 +8,6 @@ use serde::Deserialize;
 use std::process::Command;
 use std::sync::mpsc::{sync_channel, Receiver};
 use std::thread;
-use tauri::api::path::config_dir;
 use tauri::api::process::Command as TCommand;
 use tauri::WindowEvent;
 

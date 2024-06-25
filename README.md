@@ -28,7 +28,7 @@ IMPORTANT: Add `ControlPort 9051` to your torrc file.
 
 Download the latest release from the [releases page](https://github.com/calloc134/torito-frontend/releases).  
 Add `torito.toml` to `/etc/tor/` directory.
-Here is an example of `torito.toml`:
+Here is an example of `/etc/tor/torito.toml`:
 
 ```toml
 torrcPath = "/etc/tor/torrc" # Path to torrc file

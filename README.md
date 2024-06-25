@@ -23,10 +23,10 @@ Add `torito.toml` to `/etc/tor/` directory.
 Here is an example of `torito.toml`:
 
 ```toml
-torrcPath = "/etc/tor/torrc" // Path to torrc file
+torrcPath = "/etc/tor/torrc" # Path to torrc file
 backUpDirName = "/home/user/torrcBackUp" # Don't forget to make this directory
-torIp = "localhost" // Tor Control IP
-torPort = 9051 // Tor ControlPort
+torIp = "localhost" # Tor Control IP
+torPort = 9051 # Tor ControlPort
 ```
 
 Run:
